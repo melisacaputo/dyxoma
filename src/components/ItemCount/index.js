@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "reactstrap";
-import "./index.scss";
+import "./style.scss";
 
 const ItemCount = ({ initial, stock, onAdd }) => {
   const [count, setCount] = useState(initial);

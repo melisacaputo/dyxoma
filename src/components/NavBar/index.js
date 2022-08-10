@@ -1,4 +1,3 @@
-import "./index.scss";
 import logo from "../../assets/logo.gif";
 import { Nav, NavItem, NavLink } from "reactstrap";
 import CartWidget from "../CartWidget";

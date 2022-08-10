@@ -1,5 +1,5 @@
 import { BsBag } from "react-icons/bs";
-import "./index.scss";
+import "./style.scss";
 
 const CartWidget = () => {
   return (
