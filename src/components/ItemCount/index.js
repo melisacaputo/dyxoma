@@ -16,7 +16,12 @@ const ItemCount = ({ initial, stock, onAdd }) => {
       <Button color="dark" outline size="sm" onClick={increase}>
         +
       </Button>
-      <Button color="dark" outline size="sm">
+      <Button
+        color="dark"
+        outline
+        size="sm"
+        disabled={stock === 0 && "disabled"}
+      >
         Agregar al carrito
       </Button>
     </div>

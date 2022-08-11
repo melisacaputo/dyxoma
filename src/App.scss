@@ -1,4 +1,21 @@
 * {
   color: white !important;
   background-color: black;
+
+  //firefox
+  scrollbar-width: thin;
+  scrollbar-color: rgb(185, 185, 185) black;
+
+  //other browsers
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(185, 185, 185);
+  }
 }

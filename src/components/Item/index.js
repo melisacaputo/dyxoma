@@ -6,6 +6,7 @@ function Item({ product }) {
       color="dark"
       style={{
         width: "18rem",
+        margin: "1rem",
       }}
     >
       <img alt={product.name} src={product.image} />
