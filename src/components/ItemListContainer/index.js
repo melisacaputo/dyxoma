@@ -8,12 +8,12 @@ import { useState, useEffect } from "react";
 
 const ItemListContainer = ({ greeting }) => {
   const [productsList, setProductsList] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [load, setLoad] = useState(false);
 
   useEffect(() => {
     customFetch(products).then((res) => {
       setProductsList(res);
-      setLoading(true);
+      setLoad(true);
     });
   }, []);
 
@@ -21,7 +21,7 @@ const ItemListContainer = ({ greeting }) => {
     <>
       <h1 className="greeting">{greeting}</h1>
       <ItemCount initial={1} stock={20} onAdd={() => {}} />
-      {loading ? (
+      {load ? (
         <ItemList products={productsList} />
       ) : (
         <div className="load">
