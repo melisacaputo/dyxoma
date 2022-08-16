@@ -1,0 +1,14 @@
+nav {
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin: auto;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

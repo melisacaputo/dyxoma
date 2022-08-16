@@ -1,26 +1,32 @@
 import "./style.scss";
-import ItemCount from "../ItemCount";
-import ItemList from "../ItemList";
-import { customFetch } from "../../utils/customFetch";
-import { products } from "../../utils/products";
 import { Spinner } from "reactstrap";
+import { products } from "../../utils/products";
+import { customFetch } from "../../utils/customFetch";
+import ItemList from "../ItemList";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
   const [productsList, setProductsList] = useState([]);
   const [load, setLoad] = useState(false);
+  const { category } = useParams();
 
   useEffect(() => {
+    setLoad(false);
     customFetch(products).then((res) => {
-      setProductsList(res);
-      setLoad(true);
+      if (category) {
+        setProductsList(res.filter((p) => p.category === category));
+        setLoad(true);
+      } else {
+        setProductsList(res);
+        setLoad(true);
+      }
     });
-  }, []);
+  }, [category]);
 
   return (
     <>
       <h1 className="greeting">{greeting}</h1>
-      <ItemCount initial={1} stock={20} onAdd={() => {}} />
       {load ? (
         <ItemList products={productsList} />
       ) : (

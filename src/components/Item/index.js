@@ -1,4 +1,6 @@
+import "./style.scss";
 import { Card, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
+import { NavLink } from "react-router-dom";
 
 function Item({ product }) {
   return (
@@ -9,13 +11,17 @@ function Item({ product }) {
         margin: "1rem",
       }}
     >
-      <img alt={product.name} src={product.image} />
+      <img alt={product.name} src={product.image} className="product-img" />
       <CardBody>
         <CardTitle tag="h5">{product.name}</CardTitle>
         <CardSubtitle className="mb-2 text-muted" tag="h6">
           ${product.price}
         </CardSubtitle>
-        <Button>Ver detalle</Button>
+        <Button>
+          <NavLink className="btn-detalle" to={`product/${product.id}`}>
+            Ver detalle
+          </NavLink>
+        </Button>
       </CardBody>
     </Card>
   );

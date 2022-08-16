@@ -4,7 +4,7 @@ export const products = [
     image:
       "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/936/837/products/puffer1-6e0d841842a80e198e16542179615487-1024-1024.jpg",
     name: "Virtual love",
-    category: "Camperas",
+    category: "camperas",
     price: 20000,
     stock: 40,
   },
@@ -13,16 +13,16 @@ export const products = [
     image:
       "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/936/837/products/fl3j-noacaemnf91-ca91165aa62c6ac7fc16542167412250-1024-1024.jpg",
     name: "Thunder eye",
-    category: "Buzos",
+    category: "buzos",
     price: 10500,
     stock: 30,
   },
   {
     id: 3,
     image:
-      "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/936/837/products/verde11-55f59be4ff7444bd6516550565302046-1024-1024.jpg",
-    name: "Slime Fever",
-    category: "BUzos",
+      "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/936/837/products/asf-front11-400bf858b28dc77e4416424551321837-1024-1024.png",
+    name: "DX 004",
+    category: "remeras",
     price: 3400,
     stock: 60,
   },
