@@ -8,7 +8,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
   const decrease = () => count > initial && setCount(count - 1);
 
   return (
-    <div className="cart-container">
+    <div className="counter-container">
       <Button color="dark" outline size="sm" onClick={decrease}>
         -
       </Button>
@@ -21,6 +21,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
         outline
         size="sm"
         disabled={stock === 0 && "disabled"}
+        onClick={onAdd}
       >
         Agregar al carrito
       </Button>

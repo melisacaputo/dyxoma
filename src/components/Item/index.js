@@ -18,7 +18,7 @@ function Item({ product }) {
           ${product.price}
         </CardSubtitle>
         <Button>
-          <NavLink className="btn-detalle" to={`product/${product.id}`}>
+          <NavLink className="btn-detail" to={`product/${product.id}`}>
             Ver detalle
           </NavLink>
         </Button>

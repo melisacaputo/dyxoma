@@ -1,8 +1,16 @@
 import "./style.scss";
-import { Card, CardTitle, CardText, CardBody } from "reactstrap";
+import { Card, CardTitle, CardText, CardBody, Button } from "reactstrap";
 import ItemCount from "../ItemCount";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const ItemDetail = ({ selectedProduct }) => {
+  const [isAdded, setIsAdded] = useState(false);
+
+  const onAdd = () => {
+    setIsAdded(true);
+  };
+
   return (
     <div className="item-container">
       <Card color="black" body>
@@ -10,11 +18,19 @@ const ItemDetail = ({ selectedProduct }) => {
         <CardBody>
           <CardTitle>{selectedProduct.name}</CardTitle>
           <CardText>${selectedProduct.price}</CardText>
-          <ItemCount
-            initial={1}
-            stock={selectedProduct.stock}
-            onAdd={() => {}}
-          />
+          {isAdded ? (
+            <NavLink to="/cart">
+              <Button color="dark" outline size="sm">
+                Ir al carrito
+              </Button>
+            </NavLink>
+          ) : (
+            <ItemCount
+              initial={1}
+              stock={selectedProduct.stock}
+              onAdd={onAdd}
+            />
+          )}
         </CardBody>
       </Card>
     </div>

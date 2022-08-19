@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
       {load ? (
         <ItemDetail selectedProduct={selectedProduct} />
       ) : (
-        <div className="load">
+        <div className="spinner">
           <Spinner color="light"></Spinner>
         </div>
       )}

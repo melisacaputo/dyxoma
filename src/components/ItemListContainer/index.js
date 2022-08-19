@@ -28,9 +28,9 @@ const ItemListContainer = ({ greeting }) => {
     <>
       <h1 className="greeting">{greeting}</h1>
       {load ? (
-        <ItemList products={productsList} />
+        <ItemList productsList={productsList} />
       ) : (
-        <div className="load">
+        <div className="spinner">
           <Spinner color="light"></Spinner>
         </div>
       )}

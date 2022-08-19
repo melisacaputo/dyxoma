@@ -1,11 +1,12 @@
 import "./style.scss";
 import { BsBag } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
 
 const CartWidget = () => {
   return (
-    <div className="bag-icon">
+    <NavLink to="/cart" className="bag-icon">
       <BsBag />
-    </div>
+    </NavLink>
   );
 };
 
