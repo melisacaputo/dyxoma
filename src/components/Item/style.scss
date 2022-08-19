@@ -3,7 +3,18 @@
   height: 18em;
 }
 
-.btn-detail {
-  text-decoration: none;
-  background-color: transparent;
+.card-product {
+  h5,
+  h6 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  button {
+    background-color: black;
+    .btn-detail {
+      text-decoration: none;
+      background-color: transparent;
+    }
+  }
 }

@@ -12,12 +12,12 @@ function Item({ product }) {
       }}
     >
       <img alt={product.name} src={product.image} className="product-img" />
-      <CardBody>
+      <CardBody className="card-product">
         <CardTitle tag="h5">{product.name}</CardTitle>
         <CardSubtitle className="mb-2 text-muted" tag="h6">
           ${product.price}
         </CardSubtitle>
-        <Button>
+        <Button color="dark">
           <NavLink className="btn-detail" to={`product/${product.id}`}>
             Ver detalle
           </NavLink>

@@ -22,6 +22,12 @@ const NavBar = () => {
           <NavLink to="category/buzos">Buzos</NavLink>
         </li>
         <li>
+          <NavLink to="category/tops">Tops</NavLink>
+        </li>
+        <li>
+          <NavLink to="category/accesorios">Accesorios</NavLink>
+        </li>
+        <li>
           <CartWidget />
         </li>
       </ul>
