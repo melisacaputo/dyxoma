@@ -1,18 +1,16 @@
 import "./style.scss";
 import { Button } from "reactstrap";
-import { useState } from "react";
 
-const ItemCount = ({ initial, stock, onAdd }) => {
-  const [count, setCount] = useState(initial);
-  const increase = () => count < stock && setCount(count + 1);
-  const decrease = () => count > initial && setCount(count - 1);
+const ItemCount = ({ quantity, setQuantity, stock, onAdd }) => {
+  const increase = () => quantity < stock && setQuantity(quantity + 1);
+  const decrease = () => quantity > 1 && setQuantity(quantity - 1);
 
   return (
     <div className="counter-container">
       <Button color="dark" outline size="sm" onClick={decrease}>
         -
       </Button>
-      <p>{count}</p>
+      <p>{quantity}</p>
       <Button color="dark" outline size="sm" onClick={increase}>
         +
       </Button>

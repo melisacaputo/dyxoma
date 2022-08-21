@@ -1,3 +1,12 @@
 .bag-icon {
   margin: 4px 40px 0px 20px;
+
+  svg {
+    font-size: 1.2rem;
+  }
+  span {
+    background-color: white !important;
+    color: black !important;
+    margin-left: 5px;
+  }
 }

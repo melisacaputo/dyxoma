@@ -85,7 +85,7 @@ export const products = [
     image:
       "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/936/837/products/sin-titulo-11-ce52b02e35a02e366516583584350066-1024-1024.jpg",
     name: "REMERA CROP TLKSHIT",
-    category: "remeras",
+    category: "tops",
     price: 4900,
     stock: 40,
   },

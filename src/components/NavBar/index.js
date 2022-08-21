@@ -3,7 +3,7 @@ import logo from "../../assets/logo.gif";
 import CartWidget from "../CartWidget";
 import { NavLink } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <nav>
       <ul>
@@ -28,7 +28,7 @@ const NavBar = () => {
           <NavLink to="category/accesorios">Accesorios</NavLink>
         </li>
         <li>
-          <CartWidget />
+          <CartWidget>{props.children}</CartWidget>
         </li>
       </ul>
     </nav>

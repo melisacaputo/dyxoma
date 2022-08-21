@@ -1,14 +1,19 @@
 import "./style.scss";
 import { Card, CardTitle, CardText, CardBody, Button } from "reactstrap";
 import ItemCount from "../ItemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ selectedProduct }) => {
   const [isAdded, setIsAdded] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const { isInCart, addToCart } = useContext(CartContext);
 
   const onAdd = () => {
     setIsAdded(true);
+    isInCart(selectedProduct.id);
+    addToCart(selectedProduct, quantity);
   };
 
   return (
@@ -26,7 +31,8 @@ const ItemDetail = ({ selectedProduct }) => {
             </NavLink>
           ) : (
             <ItemCount
-              initial={1}
+              quantity={quantity}
+              setQuantity={setQuantity}
               stock={selectedProduct.stock}
               onAdd={onAdd}
             />
