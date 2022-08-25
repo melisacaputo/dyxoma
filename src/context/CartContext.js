@@ -1,6 +1,8 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-export const CartContext = createContext();
+const CartContext = createContext();
+export const useCartContext = () => useContext(CartContext);
+
 const { Provider } = CartContext;
 
 const CartContextProvider = ({ children }) => {
@@ -29,7 +31,10 @@ const CartContextProvider = ({ children }) => {
   };
 
   const totalPrice = () => {
-    return cartList.reduce((acc, prod) => (acc += prod.price * prod.quantity));
+    return cartList.reduce(
+      (acc, prod) => (acc += prod.price * prod.quantity),
+      0
+    );
   };
 
   const totalQuantity = () => {

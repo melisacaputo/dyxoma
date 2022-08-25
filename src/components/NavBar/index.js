@@ -1,34 +1,34 @@
 import "./style.scss";
 import logo from "../../assets/logo.gif";
 import CartWidget from "../CartWidget";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const NavBar = (props) => {
+const NavBar = () => {
   return (
     <nav>
       <ul>
         <li>
-          <NavLink to="/">
+          <Link to="/">
             <img src={logo} alt="logo dyxoma gif" width={80} />
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink to="category/remeras">Remeras</NavLink>
+          <Link to="category/remeras">Remeras</Link>
         </li>
         <li>
-          <NavLink to="category/camperas">Camperas</NavLink>
+          <Link to="category/camperas">Camperas</Link>
         </li>
         <li>
-          <NavLink to="category/buzos">Buzos</NavLink>
+          <Link to="category/buzos">Buzos</Link>
         </li>
         <li>
-          <NavLink to="category/tops">Tops</NavLink>
+          <Link to="category/tops">Tops</Link>
         </li>
         <li>
-          <NavLink to="category/accesorios">Accesorios</NavLink>
+          <Link to="category/accesorios">Accesorios</Link>
         </li>
         <li>
-          <CartWidget>{props.children}</CartWidget>
+          <CartWidget></CartWidget>
         </li>
       </ul>
     </nav>

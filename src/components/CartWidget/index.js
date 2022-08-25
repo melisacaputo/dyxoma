@@ -1,18 +1,17 @@
 import "./style.scss";
 import { BsBag } from "react-icons/bs";
 import { Badge } from "reactstrap";
-import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
-  const { totalQuantity } = useContext(CartContext);
+  const { totalQuantity } = useCartContext();
 
   return (
-    <NavLink to="/cart" className="bag-icon">
+    <Link to="/cart" className="bag-icon">
       <BsBag />
       <Badge pill>{totalQuantity()}</Badge>
-    </NavLink>
+    </Link>
   );
 };
 

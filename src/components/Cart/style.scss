@@ -1,0 +1,42 @@
+.cart-view {
+  width: 70%;
+  margin: 50px auto;
+  text-align: center;
+
+  tbody {
+    tr {
+      td {
+        display: table-cell;
+        vertical-align: middle;
+
+        .btn-remove {
+          font-size: 1.5rem;
+          background-color: transparent;
+          border: none;
+
+          svg {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .total-price {
+    font-size: 1.5rem !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  .btn-empty {
+    width: 50%;
+    margin: 50px auto;
+  }
+}
+
+.empty-cart {
+  width: 80%;
+  margin: 150px auto;
+  text-align: center;
+  font-size: 1.8rem;
+}

@@ -15,7 +15,7 @@ const App = () => {
             <Route
               path="/"
               element={
-                <ItemListContainer greeting="Bienvenido a la tienda online de Dyxoma :)" />
+                <ItemListContainer greeting="Bienvenido a la tienda online de Dyxoma" />
               }
             />
             <Route path="/category/:category" element={<ItemListContainer />} />
