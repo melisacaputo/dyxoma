@@ -16,7 +16,10 @@ const ItemDetailContainer = () => {
 
     consult
       .then((res) => {
-        setSelectedProduct(res.data());
+        setSelectedProduct({
+          ...res.data(),
+          id: res.id,
+        });
         setLoad(true);
       })
       .catch((err) => {
