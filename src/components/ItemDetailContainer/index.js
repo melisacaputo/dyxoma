@@ -1,9 +1,9 @@
 import { Spinner } from "reactstrap";
-import { products } from "../../utils/products";
-import { customFetch } from "../../utils/customFetch";
 import ItemDetail from "../ItemDetail";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { productsCollection } from "../../utils/firebase";
+import { getDoc, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [selectedProduct, setSelectedProduct] = useState({});
@@ -11,10 +11,17 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    customFetch(products).then((res) => {
-      setSelectedProduct(res.find((prod) => prod.id === parseInt(id)));
-      setLoad(true);
-    });
+    const reference = doc(productsCollection, id);
+    const consult = getDoc(reference);
+
+    consult
+      .then((res) => {
+        setSelectedProduct(res.data());
+        setLoad(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [id]);
 
   return (

@@ -18,11 +18,17 @@ const ItemDetail = ({ selectedProduct }) => {
 
   return (
     <div className="item-container">
-      <Card color="black" body>
+      <Card color="black" body className="item-card">
         <img src={selectedProduct.image} alt={selectedProduct.name} />
-        <CardBody>
-          <CardTitle>{selectedProduct.name}</CardTitle>
-          <CardText>${selectedProduct.price}</CardText>
+        <CardBody className="item-body">
+          <div className="item-heading">
+            <CardTitle>{selectedProduct.name}</CardTitle>
+            <CardText>${selectedProduct.price}</CardText>
+          </div>
+
+          <CardText className="item-description">
+            {selectedProduct.description}
+          </CardText>
           {isAdded ? (
             <Link to="/cart">
               <Button color="dark" outline size="sm">

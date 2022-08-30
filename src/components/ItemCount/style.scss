@@ -2,10 +2,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   margin-top: 20px;
+  width: 80%;
 
   button {
+    &:first-of-type {
+      margin-left: 0px;
+    }
     margin-left: 20px;
     margin-right: 20px;
   }

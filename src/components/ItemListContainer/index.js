@@ -1,10 +1,10 @@
 import "./style.scss";
 import { Spinner } from "reactstrap";
-import { products } from "../../utils/products";
-import { customFetch } from "../../utils/customFetch";
 import ItemList from "../ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { productsCollection } from "../../utils/firebase";
+import { getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = ({ greeting }) => {
   const [productsList, setProductsList] = useState([]);
@@ -12,16 +12,46 @@ const ItemListContainer = ({ greeting }) => {
   const { category } = useParams();
 
   useEffect(() => {
-    setLoad(false);
-    customFetch(products).then((res) => {
-      if (category) {
-        setProductsList(res.filter((p) => p.category === category));
-        setLoad(true);
-      } else {
-        setProductsList(res);
-        setLoad(true);
-      }
-    });
+    if (!category) {
+      const consult = getDocs(productsCollection);
+
+      consult
+        .then((snapshot) => {
+          const products = snapshot.docs.map((doc) => {
+            return {
+              ...doc.data(),
+              id: doc.id,
+            };
+          });
+          setProductsList(products);
+          setLoad(true);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      const filter = query(
+        productsCollection,
+        where("category", "==", category)
+      );
+      const consult = getDocs(filter);
+
+      consult
+        .then((snapshot) => {
+          const products = snapshot.docs.map((doc) => {
+            return {
+              ...doc.data(),
+              id: doc.id,
+            };
+          });
+          setProductsList(products);
+          setLoad(true);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      setLoad(false);
+    }
   }, [category]);
 
   return (

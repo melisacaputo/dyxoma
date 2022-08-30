@@ -1,13 +1,29 @@
 .item-container {
-  display: flex;
-  justify-content: center;
-  margin: 5rem auto;
-  width: 50%;
-  text-align: center;
-  border: rgba(128, 128, 128, 0.233) solid 1px;
+  margin: auto;
+  width: 70%;
 
-  img {
-    margin: 30px auto;
-    width: 25em;
+  .item-card {
+    display: flex;
+    flex-direction: row;
+
+    img {
+      margin: 30px;
+      width: 25em;
+    }
+
+    .item-body {
+      text-align: left;
+      margin: auto 0;
+
+      .item-heading {
+        font-weight: bolder;
+        font-size: 1.5rem;
+      }
+
+      .item-description {
+        margin: 40px 0;
+        width: 60%;
+      }
+    }
   }
 }
