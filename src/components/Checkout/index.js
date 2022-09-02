@@ -10,6 +10,7 @@ import {
   Modal,
   ModalHeader,
   ModalFooter,
+  ModalBody,
 } from "reactstrap";
 import {
   collection,
@@ -25,7 +26,7 @@ const Checkout = () => {
   const { cartList, totalPrice, emptyCart } = useCartContext();
   const navigate = useNavigate();
   const [modalSuccess, setModalSucces] = useState(false);
-  const [ord, setOrd] = useState("");
+  const [purchase, setPurchase] = useState("");
   const toggle = () => setModalSucces(!modalSuccess);
 
   const [buyer, setBuyer] = useState({
@@ -60,7 +61,7 @@ const Checkout = () => {
     addDoc(ordersCollection, order)
       .then((res) => {
         setModalSucces(true);
-        setOrd(res.id);
+        setPurchase(res.id);
       })
       .catch((err) => {
         console.log(err);
@@ -188,14 +189,39 @@ const Checkout = () => {
       </Button>
 
       {modalSuccess && (
-        <Modal isOpen={modalSuccess} toggle={handleConfirm}>
-          <ModalHeader>
-            Tu compra se proceso correctamente. Número de orden: {ord}
+        <Modal
+          id="modal-container"
+          isOpen={modalSuccess}
+          toggle={handleConfirm}
+          fade={true}
+          style={{
+            marginTop: "15%",
+            borderRadius: "1%",
+            border: "solid white 1px",
+          }}
+        >
+          <ModalHeader className="mod-header">
+            Tu compra se proceso correctamente.
           </ModalHeader>
-          <ModalFooter>
+          <ModalBody className="mod-header">
+            Número de orden: {purchase}
+          </ModalBody>
+          <ModalFooter
+            style={{
+              backgroundColor: "white",
+            }}
+          >
             <Button color="dark" onClick={emptyCart}>
-              <Link to="/">Ir al inicio</Link>
-            </Button>{" "}
+              <Link
+                to="/"
+                style={{
+                  textDecoration: "none",
+                  backgroundColor: "transparent",
+                }}
+              >
+                Ir al inicio
+              </Link>
+            </Button>
             <Button color="dark" onClick={toggle}>
               Cerrar
             </Button>
