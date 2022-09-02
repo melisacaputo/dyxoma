@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+* {
+  color: white !important;
+  background-color: black;
+  font-family: "Open Sans", sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(185, 185, 185) black;
+}
+* *::-webkit-scrollbar {
+  width: 8px;
+}
+* *::-webkit-scrollbar-track {
+  background: black;
+}
+* *::-webkit-scrollbar-thumb {
+  background-color: rgb(185, 185, 185);
+}/*# sourceMappingURL=App.css.map */

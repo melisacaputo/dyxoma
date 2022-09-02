@@ -50,15 +50,20 @@ const Cart = () => {
         </Table>
         <p className="total-price">Precio total: ${totalPrice()}</p>
 
-        <Button
-          color="dark"
-          outline
-          size="sm"
-          onClick={() => emptyCart()}
-          className="btn-empty"
-        >
-          Vaciar carrito
-        </Button>
+        <div className="btn-containter">
+          <Button color="dark" outline size="sm" className="btn-cart">
+            <Link to="/checkout">Continuar con la compra</Link>
+          </Button>
+          <Button
+            color="dark"
+            outline
+            size="sm"
+            onClick={() => emptyCart()}
+            className="btn-cart"
+          >
+            Vaciar carrito
+          </Button>
+        </div>
       </div>
     );
   }

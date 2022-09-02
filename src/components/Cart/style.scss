@@ -24,13 +24,28 @@
 
   .total-price {
     font-size: 1.5rem !important;
+    font-weight: bold;
     text-align: center;
     width: 100%;
   }
 
-  .btn-empty {
-    width: 50%;
-    margin: 50px auto;
+  .btn-containter {
+    display: flex;
+    flex-direction: column;
+    .btn-cart {
+      width: 50%;
+      margin: 0 auto;
+
+      &:first-of-type {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      a {
+        background-color: transparent;
+        text-decoration: none;
+      }
+    }
   }
 }
 

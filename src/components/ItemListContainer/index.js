@@ -13,9 +13,7 @@ const ItemListContainer = ({ greeting }) => {
 
   useEffect(() => {
     if (!category) {
-      const consult = getDocs(productsCollection);
-
-      consult
+      getDocs(productsCollection)
         .then((snapshot) => {
           const products = snapshot.docs.map((doc) => {
             return {
@@ -34,9 +32,8 @@ const ItemListContainer = ({ greeting }) => {
         productsCollection,
         where("category", "==", category)
       );
-      const consult = getDocs(filter);
 
-      consult
+      getDocs(filter)
         .then((snapshot) => {
           const products = snapshot.docs.map((doc) => {
             return {

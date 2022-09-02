@@ -12,9 +12,8 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     const reference = doc(productsCollection, id);
-    const consult = getDoc(reference);
 
-    consult
+    getDoc(reference)
       .then((res) => {
         setSelectedProduct({
           ...res.data(),
