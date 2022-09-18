@@ -1,33 +1,24 @@
 import "./style.scss";
-import {
-  Form,
-  Row,
-  Col,
-  FormGroup,
-  Label,
-  Input,
-  Button,
-  Modal,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-} from "reactstrap";
+import Modal from "../Modal";
+import { useModal } from "../Modal/useModal";
+import { useState } from "react";
+import { Form, Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
+import { useCartContext } from "../../context/CartContext";
+import { useNavigate, Link } from "react-router-dom";
 import {
   collection,
   getFirestore,
   addDoc,
   serverTimestamp,
 } from "firebase/firestore";
-import { useState } from "react";
-import { useCartContext } from "../../context/CartContext";
-import { useNavigate, Link } from "react-router-dom";
 
 const Checkout = () => {
   const { cartList, totalPrice, emptyCart } = useCartContext();
-  const navigate = useNavigate();
-  const [modalSuccess, setModalSucces] = useState(false);
   const [purchase, setPurchase] = useState("");
-  const toggle = () => setModalSucces(!modalSuccess);
+  const navigate = useNavigate();
+
+  const [isOpenSuccess, openModalSuccess, closeModalSuccess] = useModal(false);
+  const [isOpenError, openModalError, closeModalError] = useModal(false);
 
   const [buyer, setBuyer] = useState({
     nombre: "",
@@ -54,17 +45,17 @@ const Checkout = () => {
       buyer: { ...buyer },
       date: serverTimestamp(),
     };
-    console.log(order);
+
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
 
     addDoc(ordersCollection, order)
       .then((res) => {
-        setModalSucces(true);
         setPurchase(res.id);
+        openModalSuccess();
       })
       .catch((err) => {
-        console.log(err);
+        openModalError();
       });
   };
 
@@ -90,6 +81,7 @@ const Checkout = () => {
           name="nombre"
           type="text"
           bsSize="sm"
+          required="required"
           value={buyer.nombre}
           onChange={handleChangeInput}
         />
@@ -99,7 +91,9 @@ const Checkout = () => {
         <Input
           id="tel"
           name="tel"
+          type="number"
           bsSize="sm"
+          required="required"
           value={buyer.tel}
           onChange={handleChangeInput}
         />
@@ -111,6 +105,7 @@ const Checkout = () => {
           name="email"
           type="email"
           bsSize="sm"
+          required="required"
           value={buyer.email}
           onChange={handleChangeInput}
         />
@@ -122,7 +117,9 @@ const Checkout = () => {
             <Input
               id="direcc"
               name="direcc"
+              type="text"
               bsSize="sm"
+              required="required"
               value={buyer.direcc}
               onChange={handleChangeInput}
             />
@@ -134,7 +131,9 @@ const Checkout = () => {
             <Input
               id="piso"
               name="piso"
+              type="text"
               bsSize="sm"
+              required="required"
               value={buyer.piso}
               onChange={handleChangeInput}
             />
@@ -148,7 +147,9 @@ const Checkout = () => {
             <Input
               id="prov"
               name="prov"
+              type="text"
               bsSize="sm"
+              required="required"
               value={buyer.prov}
               onChange={handleChangeInput}
             />
@@ -161,6 +162,8 @@ const Checkout = () => {
               id="loc"
               name="loc"
               bsSize="sm"
+              type="text"
+              required="required"
               value={buyer.loc}
               onChange={handleChangeInput}
             />
@@ -172,7 +175,9 @@ const Checkout = () => {
             <Input
               id="cp"
               name="cp"
+              type="number"
               bsSize="sm"
+              required="required"
               value={buyer.cp}
               onChange={handleChangeInput}
             />
@@ -188,46 +193,35 @@ const Checkout = () => {
         Confirmar compra
       </Button>
 
-      {modalSuccess && (
-        <Modal
-          id="modal-container"
-          isOpen={modalSuccess}
-          toggle={handleConfirm}
-          fade={true}
+      <Modal isOpen={isOpenSuccess} closeModal={closeModalSuccess}>
+        <h3> Tu compra se procesó correctamente :)</h3>
+        <p>Recibirás un mail con el detalle de tu compra</p>
+        <p> Número de orden: {purchase}</p>
+
+        <Button
+          size="sm"
+          color="dark"
+          onClick={emptyCart}
           style={{
-            marginTop: "15%",
-            borderRadius: "1%",
-            border: "solid white 1px",
+            marginRight: "1rem",
           }}
         >
-          <ModalHeader className="mod-header">
-            Tu compra se proceso correctamente.
-          </ModalHeader>
-          <ModalBody className="mod-header">
-            Número de orden: {purchase}
-          </ModalBody>
-          <ModalFooter
+          <Link
+            to="/"
             style={{
-              backgroundColor: "white",
+              textDecoration: "none",
+              backgroundColor: "transparent",
             }}
           >
-            <Button color="dark" onClick={emptyCart}>
-              <Link
-                to="/"
-                style={{
-                  textDecoration: "none",
-                  backgroundColor: "transparent",
-                }}
-              >
-                Ir al inicio
-              </Link>
-            </Button>
-            <Button color="dark" onClick={toggle}>
-              Cerrar
-            </Button>
-          </ModalFooter>
-        </Modal>
-      )}
+            Volver al inicio
+          </Link>
+        </Button>
+      </Modal>
+
+      <Modal isOpen={isOpenError} closeModal={closeModalError}>
+        <h3>Ocurrió un error al procesar tu compra</h3>
+        <p>Por favor intenta nuevamente</p>
+      </Modal>
     </Form>
   );
 };

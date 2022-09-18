@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# DYXOMA WEB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esta web es la página oficial de la marca de indumentaria urbana Dyxoma. En la web se visualiza el catálogo de productos y se pueden realizar compras.
 
-## Available Scripts
+## Consideraciones
 
-In the project directory, you can run:
+- Para cada componente se creó un directorio que contiene al componente en sí como también a su hoja de estilos, esto busca mantener el proyecto organizado.
 
-### `npm start`
+- Los únicos comentarios que incluye el proyecto fueron agregados para evitar un error de consola que se provocaba al usar modales dentro del useEffect.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Se comprimió el tamaño de las imágenes lo mayor posible, aunque en la primera renderización de la página siguen contando con una pequeña tardanza.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalación
 
-### `npm test`
+1. Ubicadx en el repositorio, encima de la lista de archivos, hace clic en "código".
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Paso 1](https://docs.github.com/assets/cb-20363/images/help/repository/code-button.png)
 
-### `npm run build`
+2. Elegí el método "HTTPS" y copia la dirección URL del repositorio.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Abrí la consola de comandos que prefieras.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Cambia el directorio de trabajo actual a la ubicación en donde quieras clonar el directorio.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. Escribí "git clone" y pega la dirección URL que copiaste antes.
 
-### `npm run eject`
+```
+git clone https://github.com/USERNAME/REPOSITORY
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+6. Presiona **Enter** para crear el clon local.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `Spoon-Knife`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Tecnologias usadas
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- SASS
+- reactstrap
+- Firebase
+- react-router-dom
+- react-icons

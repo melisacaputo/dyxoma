@@ -5,15 +5,19 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { productsCollection } from "../../utils/firebase";
 import { getDocs, query, where } from "firebase/firestore";
+import Modal from "../Modal";
+import { useModal } from "../Modal/useModal";
 
 const ItemListContainer = ({ greeting }) => {
   const [productsList, setProductsList] = useState([]);
   const [load, setLoad] = useState(false);
+  const [isOpenProdsErr, openModalProdsErr, closeModalProdsErr] =
+    useModal(false);
   const { category } = useParams();
 
   useEffect(() => {
-    if (!category) {
-      getDocs(productsCollection)
+    const getProducts = (param) => {
+      getDocs(param)
         .then((snapshot) => {
           const products = snapshot.docs.map((doc) => {
             return {
@@ -25,30 +29,22 @@ const ItemListContainer = ({ greeting }) => {
           setLoad(true);
         })
         .catch((err) => {
-          console.log(err);
+          openModalProdsErr();
         });
+    };
+
+    if (!category) {
+      getProducts(productsCollection);
     } else {
       const filter = query(
         productsCollection,
         where("category", "==", category)
       );
-
-      getDocs(filter)
-        .then((snapshot) => {
-          const products = snapshot.docs.map((doc) => {
-            return {
-              ...doc.data(),
-              id: doc.id,
-            };
-          });
-          setProductsList(products);
-          setLoad(true);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      getProducts(filter);
       setLoad(false);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
   return (
@@ -61,6 +57,11 @@ const ItemListContainer = ({ greeting }) => {
           <Spinner color="light"></Spinner>
         </div>
       )}
+
+      <Modal isOpen={isOpenProdsErr} closeModal={closeModalProdsErr}>
+        <h3>Ocurrió un error al mostrar el listado de productos</h3>
+        <p>Por favor intenta nuevamente</p>
+      </Modal>
     </>
   );
 };

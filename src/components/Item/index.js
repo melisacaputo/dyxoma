@@ -2,7 +2,7 @@ import "./style.scss";
 import { Card, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 
-function Item({ product }) {
+const Item = ({ product }) => {
   return (
     <Card
       color="dark"
@@ -25,6 +25,6 @@ function Item({ product }) {
       </CardBody>
     </Card>
   );
-}
+};
 
 export default Item;

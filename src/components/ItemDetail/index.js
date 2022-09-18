@@ -1,7 +1,7 @@
 import "./style.scss";
-import { Card, CardTitle, CardText, CardBody, Button } from "reactstrap";
 import ItemCount from "../ItemCount";
 import { useState } from "react";
+import { Card, CardTitle, CardText, CardBody, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 

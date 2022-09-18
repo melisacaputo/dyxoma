@@ -23,7 +23,7 @@
   }
 
   .total-price {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     width: 100%;
@@ -32,6 +32,7 @@
   .btn-containter {
     display: flex;
     flex-direction: column;
+
     .btn-cart {
       width: 50%;
       margin: 0 auto;

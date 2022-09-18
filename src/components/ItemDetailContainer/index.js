@@ -1,13 +1,16 @@
-import { Spinner } from "reactstrap";
+import { Spinner, Button } from "reactstrap";
 import ItemDetail from "../ItemDetail";
+import Modal from "../Modal";
+import { useModal } from "../Modal/useModal";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { productsCollection } from "../../utils/firebase";
 import { getDoc, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [selectedProduct, setSelectedProduct] = useState({});
   const [load, setLoad] = useState(false);
+  const [isOpenProdErr, openModalProdErr, closeModalProdErr] = useModal(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -22,8 +25,10 @@ const ItemDetailContainer = () => {
         setLoad(true);
       })
       .catch((err) => {
-        console.log(err);
+        openModalProdErr();
       });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
@@ -35,6 +40,28 @@ const ItemDetailContainer = () => {
           <Spinner color="light"></Spinner>
         </div>
       )}
+
+      <Modal isOpen={isOpenProdErr} closeModal={closeModalProdErr}>
+        <h3>Ocurrió un error al mostrar el detalle del producto</h3>
+        <p>Por favor intenta nuevamente</p>
+        <Button
+          size="sm"
+          color="dark"
+          style={{
+            marginRight: "1rem",
+          }}
+        >
+          <Link
+            to="/"
+            style={{
+              textDecoration: "none",
+              backgroundColor: "transparent",
+            }}
+          >
+            Volver al inicio
+          </Link>
+        </Button>
+      </Modal>
     </>
   );
 };

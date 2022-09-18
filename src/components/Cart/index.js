@@ -1,8 +1,8 @@
 import "./style.scss";
-import { useCartContext } from "../../context/CartContext";
-import { Table, Button } from "reactstrap";
 import { FaRegTimesCircle } from "react-icons/fa";
+import { Table, Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext";
 
 const Cart = () => {
   const { cartList, removeFromCart, emptyCart, totalPrice } = useCartContext();
@@ -51,13 +51,12 @@ const Cart = () => {
         <p className="total-price">Precio total: ${totalPrice()}</p>
 
         <div className="btn-containter">
-          <Button color="dark" outline size="sm" className="btn-cart">
+          <Button color="dark" outline className="btn-cart">
             <Link to="/checkout">Continuar con la compra</Link>
           </Button>
           <Button
             color="dark"
             outline
-            size="sm"
             onClick={() => emptyCart()}
             className="btn-cart"
           >
@@ -73,7 +72,7 @@ const Cart = () => {
       <p>No hay productos en tu carrito</p>
       <Link to="/">
         <Button color="dark" outline>
-          Ir al inicio
+          Volver al inicio
         </Button>
       </Link>
     </div>
