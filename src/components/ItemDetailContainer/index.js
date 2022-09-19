@@ -1,7 +1,7 @@
 import { Spinner, Button } from "reactstrap";
 import ItemDetail from "../ItemDetail";
 import Modal from "../Modal";
-import { useModal } from "../Modal/useModal";
+import { useModal } from "../../customHooks/useModal";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { productsCollection } from "../../utils/firebase";

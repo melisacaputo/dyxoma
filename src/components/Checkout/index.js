@@ -1,6 +1,6 @@
 import "./style.scss";
 import Modal from "../Modal";
-import { useModal } from "../Modal/useModal";
+import { useModal } from "../../customHooks/useModal";
 import { useState } from "react";
 import { Form, Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
 import { useCartContext } from "../../context/CartContext";
@@ -81,7 +81,7 @@ const Checkout = () => {
           name="nombre"
           type="text"
           bsSize="sm"
-          required="required"
+          required
           value={buyer.nombre}
           onChange={handleChangeInput}
         />
@@ -93,7 +93,7 @@ const Checkout = () => {
           name="tel"
           type="number"
           bsSize="sm"
-          required="required"
+          required
           value={buyer.tel}
           onChange={handleChangeInput}
         />
@@ -105,7 +105,7 @@ const Checkout = () => {
           name="email"
           type="email"
           bsSize="sm"
-          required="required"
+          required
           value={buyer.email}
           onChange={handleChangeInput}
         />
@@ -119,7 +119,7 @@ const Checkout = () => {
               name="direcc"
               type="text"
               bsSize="sm"
-              required="required"
+              required
               value={buyer.direcc}
               onChange={handleChangeInput}
             />
@@ -133,7 +133,7 @@ const Checkout = () => {
               name="piso"
               type="text"
               bsSize="sm"
-              required="required"
+              required
               value={buyer.piso}
               onChange={handleChangeInput}
             />
@@ -149,7 +149,7 @@ const Checkout = () => {
               name="prov"
               type="text"
               bsSize="sm"
-              required="required"
+              required
               value={buyer.prov}
               onChange={handleChangeInput}
             />
@@ -163,7 +163,7 @@ const Checkout = () => {
               name="loc"
               bsSize="sm"
               type="text"
-              required="required"
+              required
               value={buyer.loc}
               onChange={handleChangeInput}
             />
@@ -177,7 +177,7 @@ const Checkout = () => {
               name="cp"
               type="number"
               bsSize="sm"
-              required="required"
+              required
               value={buyer.cp}
               onChange={handleChangeInput}
             />

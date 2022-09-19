@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { productsCollection } from "../../utils/firebase";
 import { getDocs, query, where } from "firebase/firestore";
 import Modal from "../Modal";
-import { useModal } from "../Modal/useModal";
+import { useModal } from "../../customHooks/useModal";
 
 const ItemListContainer = ({ greeting }) => {
   const [productsList, setProductsList] = useState([]);

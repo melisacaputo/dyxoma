@@ -1,20 +1,22 @@
 # DYXOMA WEB
 
-Esta web es la página oficial de la marca de indumentaria urbana Dyxoma. En la web se visualiza el catálogo de productos y se pueden realizar compras.
+Esta web creada con create-react-app es parte del proyecto final para el curso de React.js en Coder House, en la misma se visualiza el catálogo de productos de la marca de indumentaria urbana "Dyxoma" y se puede simular todo el proceso de compra.
 
-## Consideraciones
+## Tecnologías usadas
 
-- Para cada componente se creó un directorio que contiene al componente en sí como también a su hoja de estilos, esto busca mantener el proyecto organizado.
+- SASS
+- reactstrap
+- Firebase (firestore & storage)
+- react-router-dom
+- react-icons
 
-- Los únicos comentarios que incluye el proyecto fueron agregados para evitar un error de consola que se provocaba al usar modales dentro del useEffect.
+## Uso
 
-- Se comprimió el tamaño de las imágenes lo mayor posible, aunque en la primera renderización de la página siguen contando con una pequeña tardanza.
+(./assets/video.mp4)
 
 ## Instalación
 
-1. Ubicadx en el repositorio, encima de la lista de archivos, hace clic en "código".
-
-![Paso 1](https://docs.github.com/assets/cb-20363/images/help/repository/code-button.png)
+1. Ubicadx en el repositorio, encima de la lista de archivos, hace clic en donde dice "código".
 
 2. Elegí el método "HTTPS" y copia la dirección URL del repositorio.
 
@@ -39,10 +41,16 @@ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 > Unpacking objects: 100% (10/10), done.
 ```
 
-## Tecnologias usadas
+7. Una vez clonado el repositorio, cambia el directorio a la ubicación del mismo.
 
-- SASS
-- reactstrap
-- Firebase
-- react-router-dom
-- react-icons
+8. Ejecuta los comandos "npm install" y "npm start", respectivamente.
+
+9. ¡Listo! La app ya debería estar corriendo correctamente.
+
+## Consideraciones
+
+- Para cada componente se creó un directorio que contiene al componente en sí como también a su hoja de estilos, esto busca mantener el proyecto organizado.
+
+- Los únicos comentarios que incluye el proyecto fueron agregados para evitar un error de consola que se provocaba al usar modales dentro del useEffect.
+
+- Se comprimió el tamaño de las imágenes lo mayor posible, aunque en la primera renderización de la página siguen contando con una pequeña tardanza.
