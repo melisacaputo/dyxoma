@@ -12,7 +12,9 @@ Esta web creada con create-react-app es parte del proyecto final para el curso d
 
 ## Uso
 
-(./assets/video.mp4)
+En la descripción del repositorio se puede encontrar el link de vercel para acceder al deploy.
+
+https://user-images.githubusercontent.com/88042118/191060079-02eb18bd-2be1-4664-923d-5a1026eca068.mp4
 
 ## Instalación
 
@@ -31,6 +33,7 @@ git clone https://github.com/USERNAME/REPOSITORY
 ```
 
 6. Presiona **Enter** para crear el clon local.
+
 
 ```
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
