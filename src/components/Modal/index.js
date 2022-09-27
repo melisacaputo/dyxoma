@@ -1,5 +1,5 @@
-import "./style.scss";
 import { Button } from "reactstrap";
+import "./style.scss";
 
 const Modal = ({ children, isOpen, closeModal }) => {
   return (

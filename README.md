@@ -34,7 +34,6 @@ git clone https://github.com/USERNAME/REPOSITORY
 
 6. Presiona **Enter** para crear el clon local.
 
-
 ```
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 > Cloning into `Spoon-Knife`...

@@ -1,9 +1,9 @@
-import "./style.scss";
-import ItemCount from "../ItemCount";
 import { useState } from "react";
-import { Card, CardTitle, CardText, CardBody, Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import { Button, Card, CardBody, CardText, CardTitle } from "reactstrap";
 import { useCartContext } from "../../context/CartContext";
+import ItemCount from "../ItemCount";
+import "./style.scss";
 
 const ItemDetail = ({ selectedProduct }) => {
   const [isAdded, setIsAdded] = useState(false);

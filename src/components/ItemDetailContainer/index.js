@@ -1,11 +1,11 @@
-import { Spinner, Button } from "reactstrap";
+import { doc, getDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { Button, Spinner } from "reactstrap";
+import { useModal } from "../../customHooks/useModal";
+import { productsCollection } from "../../utils/firebase";
 import ItemDetail from "../ItemDetail";
 import Modal from "../Modal";
-import { useModal } from "../../customHooks/useModal";
-import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { productsCollection } from "../../utils/firebase";
-import { getDoc, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [selectedProduct, setSelectedProduct] = useState({});

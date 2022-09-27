@@ -1,7 +1,7 @@
-import "./style.scss";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.gif";
 import CartWidget from "../CartWidget";
-import { Link } from "react-router-dom";
+import "./style.scss";
 
 const NavBar = () => {
   return (

@@ -1,16 +1,16 @@
-import "./style.scss";
-import Modal from "../Modal";
-import { useModal } from "../../customHooks/useModal";
-import { useState } from "react";
-import { Form, Row, Col, FormGroup, Label, Input, Button } from "reactstrap";
-import { useCartContext } from "../../context/CartContext";
-import { useNavigate, Link } from "react-router-dom";
 import {
+  addDoc,
   collection,
   getFirestore,
-  addDoc,
   serverTimestamp,
 } from "firebase/firestore";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Button, Col, Form, FormGroup, Input, Label, Row } from "reactstrap";
+import { useCartContext } from "../../context/CartContext";
+import { useModal } from "../../customHooks/useModal";
+import Modal from "../Modal";
+import "./style.scss";
 
 const Checkout = () => {
   const { cartList, totalPrice, emptyCart } = useCartContext();

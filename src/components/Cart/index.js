@@ -1,8 +1,8 @@
-import "./style.scss";
 import { FaRegTimesCircle } from "react-icons/fa";
-import { Table, Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import { Button, Table } from "reactstrap";
 import { useCartContext } from "../../context/CartContext";
+import "./style.scss";
 
 const Cart = () => {
   const { cartList, removeFromCart, emptyCart, totalPrice } = useCartContext();

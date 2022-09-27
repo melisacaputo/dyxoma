@@ -1,6 +1,6 @@
-import "./style.scss";
-import { Card, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import { Button, Card, CardBody, CardSubtitle, CardTitle } from "reactstrap";
+import "./style.scss";
 
 const Item = ({ product }) => {
   return (

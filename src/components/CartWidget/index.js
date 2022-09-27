@@ -1,8 +1,8 @@
-import "./style.scss";
 import { BsBag } from "react-icons/bs";
-import { Badge } from "reactstrap";
 import { Link } from "react-router-dom";
+import { Badge } from "reactstrap";
 import { useCartContext } from "../../context/CartContext";
+import "./style.scss";
 
 const CartWidget = () => {
   const { totalQuantity } = useCartContext();

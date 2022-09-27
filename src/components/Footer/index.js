@@ -1,10 +1,10 @@
-import "./style.scss";
 import {
-  FaRegEnvelope,
-  FaInstagram,
   FaFacebook,
+  FaInstagram,
   FaPhoneAlt,
+  FaRegEnvelope,
 } from "react-icons/fa";
+import "./style.scss";
 
 const Footer = () => {
   return (

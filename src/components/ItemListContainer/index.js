@@ -1,12 +1,12 @@
-import "./style.scss";
-import { Spinner } from "reactstrap";
-import ItemList from "../ItemList";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { productsCollection } from "../../utils/firebase";
 import { getDocs, query, where } from "firebase/firestore";
-import Modal from "../Modal";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Spinner } from "reactstrap";
 import { useModal } from "../../customHooks/useModal";
+import { productsCollection } from "../../utils/firebase";
+import ItemList from "../ItemList";
+import Modal from "../Modal";
+import "./style.scss";
 
 const ItemListContainer = ({ greeting }) => {
   const [productsList, setProductsList] = useState([]);

@@ -1,5 +1,5 @@
-import "./style.scss";
 import { Button } from "reactstrap";
+import "./style.scss";
 
 const ItemCount = ({ quantity, setQuantity, stock, onAdd }) => {
   const increase = () => quantity < stock && setQuantity(quantity + 1);
