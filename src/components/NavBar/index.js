@@ -1,3 +1,13 @@
+import { useState } from "react";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.gif";
 import CartWidget from "../CartWidget";

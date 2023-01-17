@@ -15,4 +15,15 @@ footer {
   .footer-text {
     text-align: center;
   }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    width: 60%;
+    margin: auto auto 50px auto;
+
+    .footer-icons {
+      a {
+        margin: 0.8rem;
+      }
+    }
+  }
 }

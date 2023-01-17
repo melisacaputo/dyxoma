@@ -37,6 +37,10 @@
       width: 50%;
       margin: 0 auto;
 
+      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        width: 100%;
+      }
+
       &:first-of-type {
         margin-top: 50px;
         margin-bottom: 10px;

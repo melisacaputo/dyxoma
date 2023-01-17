@@ -6,6 +6,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 import CartContextProvider from "./context/CartContext";
+import "./App.scss";
 
 const App = () => {
   return (
