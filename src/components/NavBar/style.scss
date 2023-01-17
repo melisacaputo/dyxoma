@@ -1,32 +1,110 @@
-nav {
-  margin-top: 8px;
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  height: 70px;
+  margin-bottom: 50px;
+  padding-top: 30px;
 
-  ul {
+  .nav-links {
     display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    justify-content: flex-end;
+    list-style: none;
 
+    .NavLink,
     li {
-      margin: auto;
+      text-decoration: none;
+      margin: 12px 20px 0px;
+      font-weight: 500;
+      font-size: 1.2rem;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
 
-      a {
-        text-decoration: none;
-      }
+    .NavLink::before {
+      content: "";
+      height: 2px;
+      width: 0%;
+      background: #404e4e;
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      transition: 0.4s ease-in-out;
+    }
+
+    .NavLink:hover::before {
+      width: 100%;
+    }
+
+    .active li {
+      max-height: 100%;
+      max-width: 100%;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 5px;
     }
   }
 
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    margin-bottom: 50px;
+  .mobile-menu-icon {
+    display: none;
+  }
 
-    ul {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 800px) {
+    padding-top: 20px;
+    width: 100%;
+    height: 100%;
+    padding-left: 5px;
+    display: flex;
+    justify-content: flex-start;
+
+    .nav-links {
+      display: none;
+    }
+
+    .nav-links-mobile {
+      position: absolute;
+      display: flex;
+      justify-content: center;
       flex-direction: column;
-      align-content: center;
-      text-align: center;
+      align-items: center;
+      list-style: none;
+      left: 0;
+      top: 68px;
+      transition: all 0.5s ease-out;
+      width: 100%;
+      height: 800px;
+      z-index: 100;
+    }
 
-      li {
-        padding-top: 5px;
-      }
+    ul.nav-links-mobile {
+      padding: 0;
+    }
+
+    .mobile-menu-icon {
+      display: block;
+      position: absolute;
+      font-size: 30px;
+      border: none;
+      outline: none;
+      top: 17px;
+      right: 25px;
+    }
+
+    .navLink,
+    li {
+      font-weight: bold;
+      text-align: center;
+      margin: 0;
+      padding: 30px 0;
+      width: 100%;
+      transition: all 0.5s ease;
+    }
+
+    .active li {
+      display: block;
+      color: #787da7;
     }
   }
 }

@@ -1,47 +1,53 @@
 import { useState } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-} from "reactstrap";
-import { Link } from "react-router-dom";
+import { FaTimes, FaBars } from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.gif";
 import CartWidget from "../CartWidget";
 import "./style.scss";
 
 const NavBar = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
   return (
     <header>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">
-              <img src={logo} alt="logo dyxoma gif" width={80} />
-            </Link>
-          </li>
-          <li>
-            <Link to="category/remeras">Remeras</Link>
-          </li>
-          <li>
-            <Link to="category/camperas">Camperas</Link>
-          </li>
-          <li>
-            <Link to="category/buzos">Buzos</Link>
-          </li>
-          <li>
-            <Link to="category/tops">Tops</Link>
-          </li>
-          <li>
-            <Link to="category/accesorios">Accesorios</Link>
-          </li>
-          <li>
-            <CartWidget></CartWidget>
-          </li>
+      <nav className="navbar">
+        <div>
+          <Link to="/">
+            <img src={logo} alt="logo dyxoma gif" width={80} />
+          </Link>
+        </div>
+
+        <ul
+          className={isMobile ? "nav-links-mobile" : "nav-links"}
+          onClick={() => setIsMobile(false)}
+        >
+          <NavLink className="nav-link" to="category/remeras">
+            <li>Remeras</li>
+          </NavLink>
+          <NavLink className="nav-link" to="category/camperas">
+            <li>Camperas</li>
+          </NavLink>
+          <NavLink className="nav-link" to="category/buzos">
+            <li>Buzos</li>
+          </NavLink>
+          <NavLink className="nav-link" to="category/tops">
+            <li>Tops</li>
+          </NavLink>
+          <NavLink className="nav-link" to="category/accesorios">
+            <li>Accesorios</li>
+          </NavLink>
         </ul>
+
+        <div>
+          <CartWidget></CartWidget>
+        </div>
+
+        <button
+          className="mobile-menu-icon"
+          onClick={() => setIsMobile(!isMobile)}
+        >
+          {isMobile ? <FaTimes /> : <FaBars />}
+        </button>
       </nav>
     </header>
   );
