@@ -56,3 +56,5 @@ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 - Los únicos comentarios que incluye el proyecto fueron agregados para evitar un error de consola que se provocaba al usar modales dentro del useEffect.
 
 - Se comprimió el tamaño de las imágenes lo mayor posible, aunque en la primera renderización de la página siguen contando con una pequeña tardanza.
+
+- La versión mobile está pendiente, asi como también las validaciones del formulario.
