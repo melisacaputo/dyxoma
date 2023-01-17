@@ -65,10 +65,8 @@
 
     .nav-links-mobile {
       position: absolute;
-      display: flex;
+      display: block;
       justify-content: center;
-      flex-direction: column;
-      align-items: center;
       list-style: none;
       left: 0;
       top: 68px;
